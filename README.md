@@ -190,12 +190,31 @@ Refer to the [Installation Guide](#installation-guide) for platform-specific ins
 
 ## Running the Application
 1. Activate the virtual environment:
-   - macOS/Linux: `source env/bin/activate`
-   - Windows: `.\env\Scripts\activate`
+   - macOS/Linux:
+       ```bash
+       source env/bin/activate
+       ```
+   - Windows: 
+      ```cmd
+     .\env\Scripts\activate
+     ```
 2. Run the script:
    ```bash
    python avif-converter.py
    ```
+
+### Troubleshooting python version
+Make sure your python is not aliased by running this command:
+```bash
+which python
+```
+
+If your output does not show the path to the virtual environment (e.g. `.../env/bin/python`), and instead shows the system Python path (e.g. `/usr/bin/python`), you can temporarily unalias the Python command by running:
+```bash
+unalias python
+```
+
+Then, try running the script again.
 
 ---
 
