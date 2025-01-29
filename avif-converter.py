@@ -106,11 +106,29 @@ def start_conversion():
 # Create the main window
 root = tk.Tk()
 root.title("AVIF Converter")
+root.resizable(False, False)  # Disable resizing
+root.attributes('-topmost', True)  # Keep window on top initially
+
+# Get screen width and height
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+
+# Set window width and height (adjust if needed)
+window_width = 710  # Adjust based on your UI layout
+window_height = 300  # Adjust based on your UI layout
+
+# Calculate position
+x_position = (screen_width // 2) - (window_width // 2)
+y_position = (screen_height // 2) - (window_height // 2)
+
+# Set window position
+root.geometry(f"{window_width}x{window_height}+{x_position}+{y_position}")
 
 # Variables to store folder paths and quality
 input_folder_var = tk.StringVar()
 output_folder_var = tk.StringVar()
 quality_var = tk.IntVar(value=60)
+root.resizable(False, False)  # Disable resizing
 
 # GUI Layout
 tk.Label(root, text="Input Folder:").grid(row=0, column=0, padx=10, pady=10)
